@@ -1,0 +1,860 @@
+/*=====================================================
+    VARIABLES DEL DISEÑO
+=====================================================*/
+
+:root {
+
+    --bg-main: #0b1220;
+
+    --bg-sidebar: #10182a;
+
+    --surface: #151e2e;
+
+    --surface-2: #1b2536;
+
+    --surface-hover: #202c40;
+
+    --border: rgba(148, 163, 184, .16);
+
+    --text-primary: #f8fafc;
+
+    --text-secondary: #cbd5e1;
+
+    --text-muted: #94a3b8;
+
+    --primary: #8b5cf6;
+
+    --primary-light: #a78bfa;
+
+    --success: #22c55e;
+
+    --danger: #ef4444;
+
+    --warning: #f59e0b;
+
+}
+
+
+/*=====================================================
+    CONTENEDOR PRINCIPAL
+=====================================================*/
+
+.main-content {
+
+    min-height: 100vh;
+
+    padding: 32px;
+
+    background:
+
+        radial-gradient(
+            circle at top right,
+            rgba(139, 92, 246, .08),
+            transparent 35%
+        ),
+
+        var(--bg-main);
+
+}
+
+
+.container.fluid {
+
+    width: 100%;
+
+    max-width: 1600px;
+
+    margin: auto;
+
+}
+
+
+.dashboard-panel {
+
+    width: 100%;
+
+}
+
+
+/*=====================================================
+    HERO
+=====================================================*/
+
+.hero {
+
+    padding: 34px 38px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, .12),
+            rgba(21, 30, 46, .96)
+        );
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 260px;
+
+    height: 260px;
+
+    right: -80px;
+
+    top: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(139, 92, 246, .12);
+
+    filter: blur(35px);
+
+}
+
+
+.hero-title {
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: clamp(28px, 3vw, 42px);
+
+    font-weight: 700;
+
+    letter-spacing: -.8px;
+
+}
+
+
+.hero-title span {
+
+    color: var(--primary-light);
+
+}
+
+
+.hero-text {
+
+    max-width: 650px;
+
+    margin: 14px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+.hero-line {
+
+    width: 70px;
+
+    height: 4px;
+
+    margin-top: 24px;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+}
+
+
+/*=====================================================
+    TARJETAS DE ESTADÍSTICAS
+=====================================================*/
+
+.stat-card {
+
+    min-height: 150px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding: 24px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    background: var(--surface);
+
+    transition: .25s ease;
+
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-4px);
+
+    border-color: rgba(139, 92, 246, .55);
+
+    background: var(--surface-hover);
+
+    box-shadow: 0 14px 35px rgba(0,0,0,.22);
+
+}
+
+
+.icon-circle {
+
+    width: 54px;
+
+    height: 54px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    color: var(--primary-light);
+
+    background: rgba(139, 92, 246, .14);
+
+    border: 1px solid rgba(139, 92, 246, .28);
+
+    font-size: 22px;
+
+}
+
+
+.stat-content small {
+
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+}
+
+
+.stat-content h3 {
+
+    margin: 0 0 8px;
+
+    color: var(--text-primary);
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+}
+
+
+.success {
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+.compare {
+
+    margin-left: 6px;
+
+    color: var(--text-muted);
+
+    font-size: 12px;
+
+}
+
+
+/*=====================================================
+    TARJETA DE GRÁFICA
+=====================================================*/
+
+.chart-card,
+.ranking-card,
+.invoice-card {
+
+    height: 100%;
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    background: var(--surface);
+
+    overflow: hidden;
+
+}
+
+
+.chart-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    gap: 18px;
+
+    padding: 24px 26px 0;
+
+}
+
+
+.chart-header h4,
+.ranking-header h5,
+.invoice-header h4 {
+
+    margin: 0;
+
+    color: var(--text-primary);
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+}
+
+
+.chart-options .form-select {
+
+    min-width: 140px;
+
+    background-color: var(--surface-2) !important;
+
+    color: var(--text-secondary) !important;
+
+    border: 1px solid var(--border) !important;
+
+    border-radius: 10px;
+
+}
+
+
+.chart-options .form-select:focus {
+
+    border-color: var(--primary) !important;
+
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, .15) !important;
+
+}
+
+
+.chart-body {
+
+    height: 320px;
+
+    padding: 22px 26px 26px;
+
+}
+
+
+#salesChart {
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+}
+
+
+/*=====================================================
+    RANKING
+=====================================================*/
+
+.ranking-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 24px 26px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.ranking-icons {
+
+    display: flex;
+
+    gap: 14px;
+
+    color: var(--text-muted);
+
+}
+
+
+.ranking-icons i {
+
+    cursor: pointer;
+
+    transition: .2s ease;
+
+}
+
+
+.ranking-icons i:hover {
+
+    color: var(--primary-light);
+
+}
+
+
+.ranking-body {
+
+    padding: 8px 24px;
+
+}
+
+
+.ranking-item {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid rgba(148,163,184,.08);
+
+}
+
+
+.ranking-item:last-child {
+
+    border-bottom: none;
+
+}
+
+
+.ranking-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.ranking-icon {
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(34,197,94,.12);
+
+}
+
+
+.ranking-icon.success {
+
+    color: var(--success);
+
+}
+
+
+.ranking-icon.danger {
+
+    color: var(--danger);
+
+    background: rgba(239,68,68,.12);
+
+}
+
+
+.ranking-info p {
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+}
+
+
+.ranking-info small {
+
+    color: var(--text-muted);
+
+    font-size: 11px;
+
+}
+
+
+.text-success {
+
+    color: var(--success) !important;
+
+}
+
+
+.text-danger {
+
+    color: var(--danger) !important;
+
+}
+
+
+/*=====================================================
+    FACTURAS
+=====================================================*/
+
+.invoice-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 24px 26px;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+.invoice-header p {
+
+    margin: 6px 0 0;
+
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+}
+
+
+.btn-download {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    border: 1px solid var(--primary);
+
+    border-radius: 10px;
+
+    color: var(--primary-light);
+
+    background: transparent;
+
+    transition: .25s ease;
+
+}
+
+
+.btn-download:hover {
+
+    color: white;
+
+    background: var(--primary);
+
+}
+
+
+/*=====================================================
+    TABLA DE FACTURAS
+=====================================================*/
+
+.invoice-card .table-responsive {
+
+    overflow-x: auto;
+
+}
+
+
+.invoice-table {
+
+    min-width: 850px;
+
+    margin: 0;
+
+    color: var(--text-secondary);
+
+    --bs-table-bg: transparent;
+
+    --bs-table-color: var(--text-secondary);
+
+    --bs-table-border-color: var(--border);
+
+}
+
+
+.invoice-table thead,
+.invoice-table tbody,
+.invoice-table tr,
+.invoice-table th,
+.invoice-table td {
+
+    background: transparent !important;
+
+}
+
+
+.invoice-table th {
+
+    padding: 17px 22px;
+
+    color: var(--text-muted) !important;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    white-space: nowrap;
+
+    border-bottom: 1px solid var(--border) !important;
+
+}
+
+
+.invoice-table td {
+
+    padding: 18px 22px;
+
+    color: var(--text-secondary) !important;
+
+    border-color: rgba(148,163,184,.08) !important;
+
+    white-space: nowrap;
+
+}
+
+
+.invoice-table tbody tr {
+
+    transition: .2s ease;
+
+}
+
+
+.invoice-table tbody tr:hover {
+
+    background: rgba(139,92,246,.06) !important;
+
+}
+
+
+/*=====================================================
+    ESTADOS
+=====================================================*/
+
+.badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.badge-paid {
+
+    color: #4ade80;
+
+    background: rgba(34,197,94,.12);
+
+}
+
+
+.badge-pending {
+
+    color: #fbbf24;
+
+    background: rgba(245,158,11,.12);
+
+}
+
+
+.badge-cancel {
+
+    color: #f87171;
+
+    background: rgba(239,68,68,.12);
+
+}
+
+
+/*=====================================================
+    BOTONES DE TABLA
+=====================================================*/
+
+.btn-table {
+
+    width: 34px;
+
+    height: 34px;
+
+    margin-right: 5px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: var(--text-muted);
+
+    background: transparent;
+
+    transition: .2s ease;
+
+}
+
+
+.btn-table:hover {
+
+    color: var(--primary-light);
+
+    border-color: var(--primary);
+
+    background: rgba(139,92,246,.12);
+
+}
+
+
+/*=====================================================
+    SCROLLBAR
+=====================================================*/
+
+.table-responsive::-webkit-scrollbar {
+
+    height: 7px;
+
+}
+
+
+.table-responsive::-webkit-scrollbar-track {
+
+    background: #0f172a;
+
+}
+
+
+.table-responsive::-webkit-scrollbar-thumb {
+
+    background: #475569;
+
+    border-radius: 20px;
+
+}
+
+
+.table-responsive::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+
+}
+
+
+/*=====================================================
+    RESPONSIVE
+=====================================================*/
+
+@media (max-width: 768px) {
+
+    .main-content {
+
+        padding: 18px;
+
+    }
+
+
+    .hero {
+
+        padding: 26px 22px;
+
+    }
+
+
+    .stat-card {
+
+        padding: 20px;
+
+    }
+
+
+    .chart-header,
+    .invoice-header {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+
+    }
+
+
+    .chart-body {
+
+        height: 260px;
+
+        padding: 18px;
+
+    }
+
+}
