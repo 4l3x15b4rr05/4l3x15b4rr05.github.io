@@ -84,7 +84,7 @@
                             <a href="#" class="icon-main" aria-label="Buscar">
                                 <i class="bi bi-search"></i>
                             </a>
-                            <a href="#" class="icon-main" aria-label="Perfil">
+                            <a href="#" class="icon-main" aria-label="Perfil" data-bs-toggle="modal" data-bs-target="#loginModal">
                                 <i class="bi bi-person"></i>
                             </a>
                             <a href="#" class="icon-main" aria-label="Favoritos">
@@ -209,5 +209,120 @@
             </div>
         </section>   
     </main>
+
+    <!--Modal Inicio de Sección-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-modal">
+
+            <!-- Botón cerrar -->
+            <button type="button"
+                    class="btn-close btn-close-white login-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Cerrar">
+            </button>
+
+            <div class="modal-body p-0">
+
+                <!-- Encabezado -->
+                <div class="login-header">
+                    <div class="login-icon">
+                        <i class="bi bi-person-circle"></i>
+                    </div>
+
+                    <h3 id="loginModalLabel">Bienvenido</h3>
+
+                    <p>
+                        Ingresa a tu cuenta para acceder al dashboard y gestionar tu información.
+                    </p>
+                </div>
+
+                <!-- Formulario -->
+                <div class="login-form">
+
+                    <!-- Usuario -->
+                    <div class="mb-4">
+                        <label for="usuario" class="form-label">
+                            Usuario
+                        </label>
+
+                        <div class="login-input">
+                            <i class="bi bi-person"></i>
+
+                            <input
+                                type="text"
+                                id="usuario"
+                                class="form-control"
+                                placeholder="Ingresa tu usuario"
+                            >
+                        </div>
+                    </div>
+
+                    <!-- Contraseña -->
+                    <div class="mb-3">
+                        <label for="password" class="form-label">
+                            Contraseña
+                        </label>
+
+                        <div class="login-input">
+                            <i class="bi bi-lock"></i>
+
+                            <input
+                                type="password"
+                                id="password"
+                                class="form-control"
+                                placeholder="Ingresa tu contraseña"
+                            >
+
+                            <button
+                                type="button"
+                                class="show-password"
+                                onclick="mostrarPassword()"
+                            >
+                                <i class="bi bi-eye" id="iconoPassword"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recordar -->
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+
+                        <div class="form-check">
+                            <input
+                                class="form-check-input"
+                                type="checkbox"
+                                id="recordar"
+                            >
+
+                            <label class="form-check-label" for="recordar">
+                                Recordarme
+                            </label>
+                        </div>
+
+                        <a href="#" class="forgot-password">
+                            ¿Olvidaste tu contraseña?
+                        </a>
+
+                    </div>
+
+                    <!-- Botón -->
+                    <button class="btn-login" onclick="iniciarSesion()">
+                        <i class="bi bi-box-arrow-in-right"></i>
+                        Ingresar al Dashboard
+                    </button>
+
+                    <!-- Registro -->
+                    <div class="login-footer">
+                        <span>¿No tienes una cuenta?</span>
+                        <a href="#">Crear cuenta</a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+    
 </body>
 </html>
