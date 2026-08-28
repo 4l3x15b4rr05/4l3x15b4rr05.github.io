@@ -1,0 +1,1220 @@
+/*=========================================================
+    BOTÓN NUEVO CLIENTE
+=========================================================*/
+
+/* CONTENEDOR DEL BOTÓN */
+
+.hero-actions{
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+/* BOTÓN NUEVO CLIENTE */
+
+.btn-nuevo-cliente{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6d28d9
+    );
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 25px
+        rgba(139, 92, 246, 0.25);
+
+    transition: all .25s ease;
+}
+
+.btn-nuevo-cliente:hover{
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(139, 92, 246, 0.40);
+}
+
+
+/*=========================================================
+    RESUMEN DE CLIENTES
+=========================================================*/
+
+.clientes-resumen{
+    margin-top: 30px;
+    margin-bottom: 35px;
+}
+
+
+/*=========================================================
+    TARJETA
+=========================================================*/
+
+.cliente-stat-card{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    width: 100%;
+    min-height: 165px;
+
+    padding: 30px 38px 30px 28px;
+
+    border: 1px solid
+        rgba(148, 163, 184, 0.16);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #182338 0%,
+            #111a2a 100%
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.22);
+
+    overflow: hidden;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+
+/* Hover */
+
+.cliente-stat-card:hover{
+
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(139, 92, 246, 0.40);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.30);
+}
+
+
+/*=========================================================
+    ICONO
+=========================================================*/
+
+.cliente-stat-icon{
+
+    width: 96px;
+    height: 96px;
+
+    min-width: 96px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #4f1dbb
+        );
+
+    color: #ffffff;
+
+    font-size: 40px;
+
+    box-shadow:
+        0 12px 28px
+        rgba(124, 58, 237, 0.28);
+}
+
+
+/*=========================================================
+    CLIENTES ACTIVOS
+=========================================================*/
+
+.cliente-stat-icon.success{
+
+    background:
+        linear-gradient(
+            135deg,
+            #6fcf6b,
+            #3d9f55
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(59, 211, 138, 0.20);
+}
+
+
+/*=========================================================
+    NUEVOS CLIENTES
+=========================================================*/
+
+.cliente-stat-icon.warning{
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7b84b,
+            #d98a1c
+        );
+
+    box-shadow:
+        0 12px 28px
+        rgba(251, 191, 36, 0.20);
+}
+
+
+/*=========================================================
+    CONTENIDO
+=========================================================*/
+
+.cliente-stat-content{
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    min-width: 0;
+}
+
+
+.cliente-stat-title{
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #c4cad5;
+
+    font-size: 16px;
+
+    font-weight: 500;
+}
+
+
+.cliente-stat-content h3{
+
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 38px;
+
+    font-weight: 600;
+
+    line-height: 1.1;
+}
+
+
+.cliente-stat-content p{
+
+    margin: 0;
+
+    color: #aeb7c6;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/*=========================================================
+    TEXTOS DE ESTADO
+=========================================================*/
+
+.success-text{
+
+    color: #66c96f !important;
+}
+
+
+.warning-text{
+
+    color: #e5b157 !important;
+}
+
+
+/*=========================================================
+    BOTÓN TRES PUNTOS
+=========================================================*/
+
+.cliente-more-btn{
+
+    position: absolute;
+
+    top: 20px;
+    right: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #aeb7c6;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    transition: all .25s ease;
+}
+
+
+.cliente-more-btn:hover{
+
+    color: #ffffff;
+
+    background:
+        rgba(139, 92, 246, 0.12);
+}
+
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media (max-width: 768px){
+
+    .cliente-stat-card{
+
+        min-height: 145px;
+
+        padding: 25px;
+
+        gap: 20px;
+    }
+
+
+    .cliente-stat-icon{
+
+        width: 75px;
+        height: 75px;
+
+        min-width: 75px;
+
+        font-size: 30px;
+    }
+
+
+    .cliente-stat-content h3{
+
+        font-size: 32px;
+    }
+
+
+    .cliente-stat-title{
+
+        font-size: 14px;
+    }
+
+
+    .cliente-stat-content p{
+
+        font-size: 13px;
+    }
+
+}
+
+
+/*=========================================================
+    CONTENIDO
+=========================================================*/
+
+.cliente-stat-content{
+    display: flex;
+    flex-direction: column;
+}
+
+.cliente-stat-content span{
+    margin-bottom: 6px;
+
+    color: #aab6c8;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.cliente-stat-content h3{
+    margin: 0;
+
+    color: #f4f6fb;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media (max-width: 576px){
+
+    .cliente-stat-card{
+        min-height: 110px;
+        padding: 20px;
+    }
+
+    .cliente-stat-icon{
+        width: 52px;
+        height: 52px;
+
+        font-size: 22px;
+    }
+
+    .cliente-stat-content h3{
+        font-size: 25px;
+    }
+
+}
+
+
+
+/*=========================================================
+    RESUMEN DE CLIENTES
+=========================================================*/
+
+.clientes-resumen{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.clientes-resumen .cliente-stat-card{
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    min-height: 120px;
+
+    padding: 22px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(30, 41, 59, 0.95),
+            rgba(23, 34, 53, 0.95)
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(0, 0, 0, 0.18);
+
+    transition: all .25s ease;
+}
+
+.clientes-resumen .cliente-stat-card:hover{
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+
+    box-shadow:
+        0 20px 40px
+        rgba(0, 0, 0, 0.28);
+}
+
+
+/* Iconos */
+
+.cliente-stat-icon{
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 18px;
+
+    background:
+        rgba(139, 92, 246, 0.15);
+
+    color: #a78bfa;
+
+    font-size: 25px;
+}
+
+.cliente-stat-icon.success{
+    background:
+        rgba(59, 211, 138, 0.12);
+
+    color: #3bd38a;
+}
+
+.cliente-stat-icon.warning{
+    background:
+        rgba(251, 191, 36, 0.12);
+
+    color: #fbbf24;
+}
+
+
+/* Texto de estadísticas */
+
+.clientes-resumen span{
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #aab6c8;
+
+    font-size: 13px;
+}
+
+.clientes-resumen h3{
+    margin: 0;
+
+    color: #f4f6fb;
+
+    font-size: 28px;
+    font-weight: 700;
+}
+
+
+/*=========================================================
+    CONTENEDOR DEL LISTADO
+=========================================================*/
+
+.listado-clientes-page{
+    margin-top: 10px;
+    padding-bottom: 30px;
+}
+
+.clientes-card{
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 24px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #172235 0%,
+            #111a2a 100%
+        );
+
+    box-shadow:
+        0 20px 50px
+        rgba(0, 0, 0, 0.22);
+}
+
+
+/*=========================================================
+    ENCABEZADO
+=========================================================*/
+
+.clientes-card-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 28px 30px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.12);
+}
+
+.clientes-card-header h4{
+    margin: 0 0 5px;
+
+    color: #f4f6fb;
+
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.clientes-card-header p{
+    margin: 0;
+
+    color: #77859a;
+
+    font-size: 13px;
+}
+
+.clientes-total{
+    padding: 8px 14px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.25);
+
+    border-radius: 30px;
+
+    background:
+        rgba(139, 92, 246, 0.10);
+
+    color: #a78bfa;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+/*=========================================================
+    FILTROS
+=========================================================*/
+
+.clientes-filtros{
+    padding: 24px 30px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.10);
+}
+
+
+/* Buscador */
+
+.clientes-search{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+}
+
+.clientes-search i{
+    position: absolute;
+
+    left: 16px;
+
+    color: #77859a;
+
+    font-size: 16px;
+
+    pointer-events: none;
+}
+
+.clientes-search input{
+    width: 100%;
+    height: 48px;
+
+    padding:
+        0 16px 0 46px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.20);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #111a2a;
+
+    color: #f4f6fb;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+
+    transition: all .25s ease;
+}
+
+.clientes-search input::placeholder{
+    color: #77859a;
+}
+
+.clientes-search input:focus{
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139, 92, 246, 0.12);
+}
+
+
+/* Selectores solo del listado */
+
+.clientes-filtros .form-select{
+    height: 48px;
+
+    padding-left: 15px;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.20);
+
+    border-radius: 13px;
+
+    background-color: #111a2a;
+
+    color: #aab6c8;
+
+    font-size: 13px;
+
+    box-shadow: none;
+}
+
+.clientes-filtros .form-select:focus{
+    border-color: #8b5cf6;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(139, 92, 246, 0.12);
+}
+
+
+/* Botón filtrar */
+
+.btn-filtrar{
+    height: 48px;
+
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.50);
+
+    border-radius: 13px;
+
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    color: #a78bfa;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition: all .25s ease;
+}
+
+.btn-filtrar:hover{
+    border-color: #8b5cf6;
+
+    background: #8b5cf6;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/*=========================================================
+    TABLA DE CLIENTES
+=========================================================*/
+
+.clientes-table{
+    width: 100%;
+
+    margin: 0;
+
+    color: #d6dce8;
+
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.clientes-table thead th{
+    padding: 18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    color: #77859a;
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: .6px;
+    text-transform: uppercase;
+
+    white-space: nowrap;
+}
+
+.clientes-table tbody td{
+    padding: 18px 20px;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.08);
+
+    color: #aab6c8;
+
+    font-size: 13px;
+
+    vertical-align: middle;
+}
+
+.clientes-table tbody tr{
+    transition: all .20s ease;
+}
+
+.clientes-table tbody tr:hover{
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+.clientes-table tbody tr:last-child td{
+    border-bottom: none;
+}
+
+
+/*=========================================================
+    TABLA DE CLIENTES - TEMA OSCURO
+=========================================================*/
+
+.clientes-table{
+    width: 100%;
+
+    margin-bottom: 0;
+
+    --bs-table-bg: transparent;
+    --bs-table-color: #d8deea;
+    --bs-table-border-color: rgba(148, 163, 184, 0.12);
+
+    background: transparent;
+
+    color: #d8deea;
+}
+
+
+/* Encabezado */
+
+.clientes-table thead{
+
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+
+.clientes-table thead th{
+
+    padding: 18px 20px;
+
+    color: #9da9bc;
+
+    background: transparent;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.16);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    white-space: nowrap;
+}
+
+
+/* Filas */
+
+.clientes-table tbody tr{
+
+    background: transparent;
+
+    transition:
+        background .25s ease;
+}
+
+
+.clientes-table tbody td{
+
+    padding: 18px 20px;
+
+    color: #c7cfdb;
+
+    background: transparent;
+
+    border-color:
+        rgba(148, 163, 184, 0.10);
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+/* Hover */
+
+.clientes-table tbody tr:hover{
+
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+
+/* Evitar que Bootstrap coloque fondo blanco */
+
+.clientes-table > :not(caption) > * > *{
+
+    background-color: transparent;
+
+    box-shadow: none;
+}
+
+/*=========================================================
+    INFORMACIÓN DEL CLIENTE
+=========================================================*/
+
+.cliente-info{
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+}
+
+.cliente-avatar{
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #5b32bd
+        );
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    box-shadow:
+        0 6px 15px
+        rgba(139, 92, 246, 0.25);
+}
+
+.cliente-info strong{
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #f4f6fb;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cliente-info small{
+    display: block;
+
+    color: #77859a;
+
+    font-size: 11px;
+}
+
+
+/*=========================================================
+    ESTADO DEL CLIENTE
+=========================================================*/
+
+.cliente-status{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.cliente-status.active{
+    border:
+        1px solid
+        rgba(59, 211, 138, 0.20);
+
+    background:
+        rgba(59, 211, 138, 0.10);
+
+    color: #3bd38a;
+}
+
+.cliente-status.inactive{
+    border:
+        1px solid
+        rgba(240, 91, 89, 0.20);
+
+    background:
+        rgba(240, 91, 89, 0.10);
+
+    color: #f05b59;
+}
+
+
+/*=========================================================
+    ACCIONES
+=========================================================*/
+
+.cliente-actions{
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.btn-cliente-action{
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    color: #aab6c8;
+
+    font-size: 14px;
+
+    transition: all .20s ease;
+}
+
+.btn-cliente-action:hover{
+    border-color:
+        rgba(139, 92, 246, 0.50);
+
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    color: #a78bfa;
+
+    transform: translateY(-2px);
+}
+
+.btn-cliente-action.danger:hover{
+    border-color:
+        rgba(240, 91, 89, 0.40);
+
+    background:
+        rgba(240, 91, 89, 0.10);
+
+    color: #f05b59;
+}
+
+
+/*=========================================================
+    PAGINACIÓN
+=========================================================*/
+
+.clientes-pagination{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 30px;
+
+    border-top:
+        1px solid
+        rgba(148, 163, 184, 0.10);
+}
+
+.pagonation-info{
+    color: #77859a;
+
+    font-size: 12px;
+}
+
+.pagination-buttons{
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.page-btn{
+    width: 36px;
+    height: 36px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.02);
+
+    color: #aab6c8;
+
+    font-size: 12px;
+
+    transition: all .20s ease;
+}
+
+.page-btn:hover{
+    border-color:
+        rgba(139, 92, 246, 0.50);
+
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    color: #a78bfa;
+}
+
+.page-btn.active{
+    border-color: transparent;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #6d28d9
+        );
+
+    color: #ffffff;
+
+    box-shadow:
+        0 6px 16px
+        rgba(139, 92, 246, 0.30);
+}
+
+
+/*=========================================================
+    RESPONSIVE
+=========================================================*/
+
+@media (max-width: 991px){
+
+    .clientes-card-header{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .clientes-pagination{
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pagination-buttons{
+        flex-wrap: wrap;
+    }
+
+    .clientes-filtros{
+        padding: 20px;
+    }
+
+    .clientes-card-header,
+    .clientes-pagination{
+        padding: 22px 20px;
+    }
+
+}
+
+
+@media (max-width: 576px){
+
+    .clientes-resumen .cliente-stat-card{
+        min-height: 100px;
+
+        padding: 18px;
+    }
+
+    .cliente-stat-icon{
+        width: 50px;
+        height: 50px;
+
+        font-size: 21px;
+    }
+
+    .clientes-card-header h4{
+        font-size: 18px;
+    }
+
+    .clientes-total{
+        font-size: 11px;
+    }
+
+    .cliente-actions{
+        gap: 4px;
+    }
+
+    .btn-cliente-action{
+        width: 30px;
+        height: 30px;
+
+        font-size: 12px;
+    }
+
+}
