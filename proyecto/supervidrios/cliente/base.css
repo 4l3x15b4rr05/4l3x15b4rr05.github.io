@@ -1,0 +1,459 @@
+/*=========================================================
+    SUPER VIDRIOS
+    DISEÑO MODERNO DARK / E-COMMERCE
+=========================================================*/
+
+/*=========================================================
+    VARIABLES
+=========================================================*/
+
+:root{
+    --sidebar-width: 92px;
+    --bg-main: #0b1220;
+    --bg-secondary: #111a2a;
+    --bg-card: #172235;
+    --bg-card-light: #202c40;
+    --border-color: rgba(148, 163, 184, 0.18);
+    --text-main: #f4f6fb;
+    --text-secondary: #aab6c8;
+    --text-muted: #77859a;
+    --purple: #8b5cf6;
+    --purple-light: #a78bfa;
+    --purple-dark: #5b32bd;
+    --red: #f05b59;
+    --green: #3bd38a;
+}
+
+/*=========================================================
+    CONFIGURACIÓN GENERAL
+=========================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: "Poppins", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(139, 92, 246, 0.10),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(240, 91, 89, 0.05),
+            transparent 25%
+        ),
+        var(--bg-main);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*=========================================================
+    SIDEBAR
+=========================================================*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--sidebar-width);
+    padding: 25px 0;
+    border-right:
+        1px solid var(--border-color);
+    background:
+        linear-gradient(
+            180deg,
+            #131d2d 0%,
+            #0d1523 100%
+        );
+    box-shadow:
+        12px 0 35px
+        rgba(0, 0, 0, 0.14);
+}
+
+/*=========================================================
+    LOGO DEL SIDEBAR
+=========================================================*/
+
+.sidebar-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 58px;
+    margin-bottom: 65px;
+    border:
+        1px solid
+        rgba(139, 92, 246, 0.35);
+    border-radius: 18px;
+    background:
+        rgba(139, 92, 246, 0.08);
+    box-shadow:
+        0 0 30px
+        rgba(139, 92, 246, 0.12);
+}
+
+
+.sidebar-logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+
+/*=========================================================
+    NAVEGACIÓN LATERAL
+=========================================================*/
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+
+}
+
+/* ==========================================
+   GRUPO
+========================================== */
+
+.step-group {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ==========================================
+   NUMEROS
+========================================== */
+
+.step {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #8491a8;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    font-family: "Poppins", sans-serif;
+    cursor: pointer;
+    transition: all .25s ease;
+    z-index: 10;
+}
+
+.step span {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* Hover */
+
+.step:hover {
+    color: #ffffff;
+    background: rgba(139, 92, 246, .10);
+    border-color: rgba(139, 92, 246, .25);
+}
+
+
+/* Activo */
+
+.step.active {
+    color: #ffffff;
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #9b5cf6
+    );
+
+    border-color: transparent;
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, .30);
+}
+
+
+/* ==========================================
+   SUBMENU
+========================================== */
+
+.step-submenu {
+    position: absolute;
+    left: 72px;
+    top: 0;
+    width: 190px;
+    padding: 8px;
+    background: #151f31;
+    border: 1px solid #293750;
+    border-radius: 12px;
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-8px);
+    transition:
+        opacity .2s ease,
+        transform .2s ease,
+        visibility .2s ease;
+    z-index: 1000;
+}
+
+
+/* ==========================================
+   SUBMENU ABIERTO
+========================================== */
+
+.step-submenu.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+
+/* ==========================================
+   OPCIONES
+========================================== */
+
+.step-submenu a {
+    display: block;
+    padding: 10px 12px;
+    color: #9ba9c1;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    border-radius: 8px;
+    transition: all .2s ease;
+}
+
+
+.step-submenu a:hover {
+    color: #ffffff;
+    background: rgba(139,92,246,.12);
+    padding-left: 16px;
+}
+
+.nav-icons{
+    gap: 22px;
+}
+
+.nav-icons i{
+    font-size: 1.2rem;
+    color: #7c3aed;
+    cursor: pointer;
+    transition: .25s;
+}
+
+.nav-icons i:hover{
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.avatar{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(0,0,0,.35);
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+}
+
+.btn-today{
+    border: none;
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--primary-hover)
+    );
+    color:white;
+    padding:10px 18px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.25s;
+}
+
+.btn-today:hover{
+    transform:translateY(-2px);
+    box-shadow: 0 12px 24px rgba(139,92,246,.35);
+}
+
+
+/*=========================================================
+    HEADER
+=========================================================*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    z-index: 1050;
+    height: 92px;
+    min-height: 92px;
+    padding: 0 38px;
+    border-bottom: 1px solid var(--border-color);
+    background: rgba(15, 23, 38, 0.92);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.header .container-fluid {
+    padding: 0;
+}
+
+/*=========================================================
+    LOGO PRINCIPAL
+=========================================================*/
+
+.logo-text {
+    display: inline-flex;
+    align-items: center;
+
+}
+
+
+.logo-svg {
+    width: 205px;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=========================================================
+    MENÚ SUPERIOR
+=========================================================*/
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 42px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.menu a {
+    position: relative;
+    display: inline-block;
+    padding: 35px 0;
+    color: var(--text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.25s ease;
+}
+
+
+.menu a::after {
+    position: absolute;
+    right: 0;
+    bottom: 22px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    margin: auto;
+    content: "";
+    border-radius: 20px;
+    background: var(--purple);
+    transition: 0.3s ease;
+}
+
+
+.menu a:hover {
+    color: white;
+}
+
+
+.menu a:hover::after {
+    width: 100%;
+
+}
+
+
+/*=========================================================
+    ICONOS DEL HEADER
+=========================================================*/
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+}
+
+
+.icon-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--text-secondary);
+    font-size: 19px;
+    border: 1px solid  transparent;
+    border-radius: 12px;
+    transition: 0.25s ease;
+}
+
+
+.icon-main:hover {
+    color: var(--purple-light);
+    border-color: rgba(139,92,246,0.30);
+    background: rgba(139,92,246,0.10);
+
+}
+
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 44px;
+    margin-left: 8px;
+    padding: 0 17px;
+    color: white;
+    border: 1px solid rgba(139,92,246,0.55);
+    border-radius: 14px;
+    background: rgba(139,92,246,0.12);
+    transition: 0.25s ease;
+}
+
+
+.cart-link i {
+    color: var(--purple-light);
+    font-size: 19px;
+}
+
+
+.cart-link:hover {
+    border-color: var(--purple);
+    background: var(--purple);
+}
