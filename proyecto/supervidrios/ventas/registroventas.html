@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GestorVentas</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="registrocliente.css">
+    <link rel="stylesheet" href="registrocliente1.css">
+    <link rel="stylesheet" href="registroventa.css">
+    <link rel="stylesheet" href="registroventas1.css">
+    
+    
+    
+    
+    
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="#">
+                <img src="/supervidrios/logosimbol.svg" alt="Logo simbolo">
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <!--01-->
+            <div class="step-group">
+                <button class="step active" type="button" onclick="toggleMenu('menu01' , this)">
+                    <span>01</span>
+                </button>
+                <div class="step-submenu" id="menu01">
+                    <a href="">Dashboard</a>
+                    <a href="">Resumen de ventas</a>
+                    <a href="">Indicadores</a>
+                </div>
+            </div>
+            <!--02-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu02' , this)">
+                    <span>02</span>
+                </button>
+                <div class="step-submenu" id="menu02">
+                    <a href="">Clientes</a>
+                    <a href="">Registro de clientes</a>
+                    <a href="">Listado de clientes</a>
+                </div>
+            </div>
+            <!--03-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu03' , this)">
+                    <span>03</span>
+                </button>
+                <div class="step-submenu" id="menu03">
+                    <a href="">Ventas</a>
+                    <a href="">Nueva venta</a>
+                    <a href="">Cotizaciones</a>
+                    <a href="">Listado de facturas</a>
+                </div>
+            </div>
+            <!--04-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu04' , this)">
+                    <span>04</span>
+                </button>
+                <div class="step-submenu" id="menu04">
+                    <a href="">Inventario</a>
+                    <a href="">Productos</a>
+                    <a href="">Entradas</a>
+                    <a href="">Salidas</a>
+                </div>
+            </div>
+            <!--05-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu05' , this)">
+                    <span>05</span>
+                </button>
+                <div class="step-submenu" id="menu05">
+                    <a href="">Configuración</a>
+                    <a href="">Usuarios</a>
+                    <a href="">Perfil</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <!--Header-->
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!--Logo-->
+                    <div class="col-lg-3">
+                        <a href="#" class="logo-text">
+                            <img src="/supervidrios/logotext.svg" alt="Logo supervidrios" class="logo-svg">
+                        </a>
+                    </div>
+                     <!--Menu-->
+                    <div class="col-lg-6">
+                        <ul class="menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">History</a>
+                            </li>
+                            <li>
+                                <a href="#">Service</a>
+                            </li>
+                            <li>
+                                <a href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Icons-->
+                    <div class="col-lg-3">
+                        <div class="d-flex align-items-center nav-icons">
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-bell"></i>
+                            <i class="bi bi-chat"></i>
+                            <i class="bi bi-wifi text-success"></i>
+                            <img src="https://i.pravatar.cc/40" alt="foto de perfil" class="avatar mx-2">
+                            <button class="btn btn-today">Today</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Contenido-->
+        <div class="container-fluid">
+            <div class="main-container">
+                <div class="dashboard-panel">
+                    <section class="hero">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h1 class="hero-title">Gestión de 
+                                    <span>Ventas</span>
+                                </h1>
+                                <p class="hero-text">
+                                  El registro diario de las ventas en la plataforma permite llevar un control organizado de 
+                                  los ingresos, conocer el comportamiento de las ventas y tomar decisiones basdas en 
+                                  información real. Además, facilita el seguimiento de los resultados, la identificación de tendencias
+                                  y el cumplimiento de los objetivos comerciales.
+                                </p>
+                                </div>
+                                <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                    <a href="" class="btn-nueva-venta">
+                                        <i class="bi bi-person-fill"></i>
+                                        Nueva Venta
+                                    </a>
+                                </div>
+                                <div class="col-12">
+                                <div class="hero-line"></div>
+                            </div>
+                        </div>
+                    </section>
+<!--*************************Borro**************************-->
+                    <section class="registro-ventas">
+                        <div class="row g-4">
+                            <div class="col-lg-4">
+                                <div class="card-dark client-card">
+                                    <div class="card-heading">
+                                        <i class="bi bi-person"></i>
+                                        <h3>Información del cliente</h3>
+                                    </div>
+                                    <div class="row g-4">
+                                        <div class="col-md-12">
+                                            <label for="cliente" class="form-label">Nombre del cliente</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-person"></i>
+                                                </span>
+                                                <input type="text" id="cliente" class="form-control" placeholder="Ingrese nombre del cliente">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="nit" class="form-label">NIT</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-receipt"></i>
+                                                </span>
+                                                <input type="text" id="nit" class="form-control" placeholder="Ingrese NIT">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="direccion" class="form-label">Dirección</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </span>
+                                                <input type="text" id="direccion" class="form-control" placeholder="Ingrese dirección">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="ciudad" class="form-label">Ciudad</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-building"></i>
+                                                </span>
+                                                <input type="text" id="ciudad" class="form-control" placeholder="Ingrese ciudad">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="telefono" class="form-label">Teléfono</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-telephone"></i>
+                                                </span>
+                                                <input type="text" id="telefono" class="form-control" placeholder="Ingrese número telefónico">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="correo" class="form-label">Correo Electrónico</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">
+                                                    <i class="bi bi-envelope"></i>
+                                                </span>
+                                                <input type="email" id="correo" class="form-control" placeholder="Ingrese correo electrónico">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="card-dark products-card">
+                                    <div class="card-heading product-heading">
+                                        <div class="heading-title">
+                                            <i class="bi bi-box"></i>
+                                            <h3>Productos de la venta</h3>
+                                        </div>
+                                        <button type="button" class="btn-add-product" onclick="agregarProduct()">
+                                            <i class="bi bi-plus-lg"></i>
+                                            Agregar producto
+                                        </button>
+                                    </div>
+                                    <div class="table-responsive">
+                                        <table class="table product-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Producto</th>
+                                                    <th>Cantidad</th>
+                                                    <th>Valor Unit.</th>
+                                                    <th>Desc. %</th>
+                                                    <th>Total</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="productosBody">
+                                                <tr>
+                                                    <td>
+                                                        <div class="product-info">
+                                                            <div class="product-image">
+                                                                <i class="bi bi-car-front"></i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Parabrisas delantero</strong>
+                                                                <small>REF: PV-1001</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity-control">
+                                                            <button type="button" onclick="disminuirCantidad(this)">-</button>
+                                                            <span>1</span>
+                                                            <button type="button" onclick="aumentarCantidad(this)">+</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">$800.000</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="discount-control">
+                                                            <input type="number" value="0" min="0">
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong class="product-total">$800.000</strong>
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-buttons">
+                                                            <button type="button" class="btn-edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                            <button type="button" class="btn-delete">
+                                                                <i class="bi bi-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="product-info">
+                                                            <div class="product-image">
+                                                                <i class="bi bi-window"></i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Vidrio lateral</strong>
+                                                                <small>REF: VL-2003</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity-control">
+                                                            <button type="button" onclick="disminuirCantidad(this)">-</button>
+                                                            <span>2</span>
+                                                            <button type="button" onclick="aumentarCantidad(this)">+</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">$350.000</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="discount-control">
+                                                            <input type="number" value="5" min="0">
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong class="product-total">$665.000</strong>
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-buttons">
+                                                            <button type="button" class="btn-edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                            <button type="button" class="btn-delete">
+                                                                <i class="bi bi-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="product-info">
+                                                            <div class="product-image">
+                                                                <i class="bi bi-window"></i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Luneta trasera</strong>
+                                                                <small>REF: LT-3002</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity-control">
+                                                            <button type="button" onclick="disminuirCantidad(this)">-</button>
+                                                            <span>2</span>
+                                                            <button type="button" onclick="aumentarCantidad(this)">+</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">$600.000</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="discount-control">
+                                                            <input type="number" value="5" min="0">
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong class="product-total">$600.000</strong>
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-buttons">
+                                                            <button type="button" class="btn-edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                            <button type="button" class="btn-delete">
+                                                                <i class="bi bi-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="product-info">
+                                                            <div class="product-image">
+                                                                <i class="bi bi-window"></i>
+                                                            </div>
+                                                            <div>
+                                                                <strong>Puerta delantera derecha</strong>
+                                                                <small>REF: PD-4001</small>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="quantity-control">
+                                                            <button type="button" onclick="disminuirCantidad(this)">-</button>
+                                                            <span>2</span>
+                                                            <button type="button" onclick="aumentarCantidad(this)">+</button>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <span class="price">$950.000</span>
+                                                    </td>
+                                                    <td>
+                                                        <div class="discount-control">
+                                                            <input type="number" value="10" min="0">
+                                                            <span>%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <strong class="product-total">$850.000</strong>
+                                                    </td>
+                                                    <td>
+                                                        <div class="action-buttons">
+                                                            <button type="button" class="btn-edit">
+                                                                <i class="bi bi-pencil"></i>
+                                                            </button>
+                                                            <button type="button" class="btn-delete">
+                                                                <i class="bi bi-trash"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="row g-4 mt-1">
+                                    <div class="col-md-5">
+                                        <div class="card-dark payment-card">
+                                            <div class="card-heading">
+                                                <i class="bi bi-credit-card"></i>
+                                                <h3>Condición de pago</h3>
+                                            </div>
+                                            <label for="pago" class="form-label">Forma de pago</label>
+                                            <select name="" id="pago" class="form-select">
+                                                <option value="credito">Crédito 45 días</option>
+                                                <option value="contado">Contado</option>
+                                                <option value="transferencia">Transferencia bancaria</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-7">
+                                        <div class="card-dark summary-card">
+                                            <div class="card-heading">
+                                                <i class="bi bi-receipt"></i>
+                                                <h3>Resumen de la venta</h3>
+                                            </div>
+                                            <div class="summary-row">
+                                                <span>Subtotal</span>
+                                                <strong id="subtotal">$2.920.000</strong>
+                                            </div>
+                                            <div class="summary-row">
+                                                <span>IVA (19%)</span>
+                                                <strong id="iva">$554.800</strong>
+                                            </div>
+                                            <div class="summary-row discount-row">
+                                                <span>Descuento</span>
+                                                <strong id="descuento">$294.000</strong>
+                                            </div>
+                                            <hr>
+                                            <div class="summary-total">
+                                                <span>Total</span>
+                                                <h3 id="totalFactura">$3.180.800</h3>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="d-grid">
+                                    <button class="btn btn-orange btn-lg" onclick="generarFactura()">
+                                        <i class="bi bi-receipt-cutoff me-2"></i>
+                                        Generar factura electrónica
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center text-secondary mt-4">
+                            <i class="bi bi-shield-lock-fill me-2"></i>
+                            La información se almacena de forma segura.
+                        </div>
+                    </section> 
+
+                    <!---Modal factura electronica-->
+                    <div class="modal fade" id="modalFactura" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog modal-xl modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">
+                                        <i class="bi bi-receipt">Vista previa de factura</i>
+                                    </h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <!--Aqui se genera la factura-->
+                                    <section class="factura-page">
+                                        <div class="factura-container">
+                                            <div class="factura-page-header">
+                                                <div class="factura-page-title">
+                                                    <div class="factura-page-icon">
+                                                        <i class="bi bi-receipt-cutoff"></i>
+                                                    </div>
+                                                    <div>
+                                                        <span class="factura-badge">DOCUMENTO ELECTRÓNICO</span>
+                                                        <h2>Vista previa de
+                                                            <span>Factura</span>
+                                                        </h2>
+                                                        <p>Revisa la información de la factura antes de enviarla o imprimirla.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="factura-status">
+                                                    <span class="status-dot"></span>
+                                                    Factura generada
+                                                </div>
+                                            </div>
+                                            <!--Panel principal-->
+                                            <div class="factura-card-dark">
+                                                <!--Barra superior-->
+                                                <div class="factura-toolbar">
+                                                    <div>
+                                                        <h3>
+                                                            <i class="bi bi-file-eamark-text"></i>
+                                                            Factura electrónica
+                                                        </h3>
+                                                        <span>Vista previa del documento generado</span>
+                                                    </div>
+                                                    <div class="factura-toolbar-actions">
+                                                        <button type="button" class="btn-factura-email">
+                                                            <i class="bi bi-envelope"></i>
+                                                            Enviar
+                                                        </button>
+                                                        <button type="button" class="btn-factura-print" onclick="imprimirFactura()">
+                                                            <i class="bi bi-printer"></i>
+                                                            Imprimir
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <!--Documento factura-->
+                                                <div class="invoice-paper" id="facturaImprimir">
+                                                    <!--Encabezado factura-->
+                                                    <div class="invoice-top">
+                                                        <!--empresa-->
+                                                        <div class="invoice-company">
+                                                            <div class="invoice-logo">
+                                                                <img src="/supervidrios/logosimbol.svg" alt="Supervidrios">
+                                                            </div>
+                                                            <div class="company-info">
+                                                                <h4>SUPER VIDRIOS</h4>
+                                                                <p>TODO EN PARABRISAS</p>
+                                                                <span>NIT. 1098637937-0</span>
+                                                                <span>Floridablanca, Santander</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Datos factura-->
+                                                    <div class="invoice-docunent-info">
+                                                        <div class="invoice-document-title">
+                                                            <span class="invoice-document-icon">
+                                                                <i class="bi bi-file-earmark-text"></i>
+                                                            </span>
+                                                            <div>
+                                                                <h3>FACTURA ELECTRÓNICA</h3>
+                                                                <strong>No. FE-0012345</strong>
+                                                            </div>
+                                                        </div>
+                                                        <div class="invoice-document-details">
+                                                            <div>
+                                                                <span>Fecha</span>
+                                                                <strong id="fechaFactura">--</strong>
+                                                            </div>
+                                                            <div>
+                                                                <span>Operación</span>
+                                                                <strong>Venta de bienes</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Linea-->
+                                                <div class="invoice-divider"></div>
+                                                <!--Información del cliente-->
+                                                <div class="row g-3 invoice-info-row">
+                                                    <!--Cliente-->
+                                                    <div class="col-lg-4">
+                                                        <div class="invoice-info-card">
+                                                            <div class="invoice-info-title">
+                                                                <i class="bi bi-person"></i>
+                                                                <span>CLIENTE</span>
+                                                            </div>
+                                                            <div class="invoice-client-name">
+                                                                <strong id="f_cliente"></strong>
+                                                            </div>
+                                                            <div class="invoice-data-list">
+                                                                <div>
+                                                                    <span>NIT</span>
+                                                                    <strong id="f_nit"></strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Dirección</span>
+                                                                    <strong id="f_direccion"></strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Ciudad</span>
+                                                                    <strong id="f_ciudad"></strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Teléfono</span>
+                                                                    <strong id="f_telefono"></strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Email</span>
+                                                                    <strong id="f_correo"></strong>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Envio-->
+                                                    <div class="col-lg-4">
+                                                        <div class="invoice-info-card">
+                                                            <div class="invoice-info-title">
+                                                                <i class="bi bi-truck"></i>
+                                                                <span>ENVIAR A</span>
+                                                            </div>
+                                                            <div class="invoice-client-name">
+                                                                <strong id="f_envio_nombre"></strong>
+                                                            </div>
+                                                            <div class="invoice-data-list">
+                                                                <div>
+                                                                    <span>Dirección</span>
+                                                                    <strong id="f_envio_direccion">Calle 21 No. 16-55</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Ciudad</span>
+                                                                    <strong id="f_envio_ciudad">Bucaramanga</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Teléfono</span>
+                                                                    <strong id="f_envio_telefono">(+57) 315 621 7140</strong>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!--Condiciones-->
+                                                    <div class="col-lg-4">
+                                                        <div class="invoice-info-card">
+                                                            <div class="invoice-info-title">
+                                                                <i class="bi bi-credit-card"></i>
+                                                                <span>CONDICIONES</span>
+                                                            </div>
+                                                            <div class="invoice-data-list">
+                                                                <div>
+                                                                    <span>Condición de pago</span>
+                                                                    <strong id="f_pago"></strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Medio de pago</span>
+                                                                    <strong id="f_medio">Transferencia Débito</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Orden de compra</span>
+                                                                    <strong id="f_orden">Marzo 26</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>MOneda</span>
+                                                                    <strong>COP</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Fecha generación</span>
+                                                                    <strong id="f_fecha_hora">2026-03-27 11:10</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Fecha validación</span>
+                                                                    <strong id="f_validacion">2026-03-27</strong>
+                                                                </div>
+                                                                <div>
+                                                                    <span>Vencimiento</span>
+                                                                    <strong id="f_vencimiento">2026-05-11</strong>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Productos-->
+                                                <div class="invoice-section-title">
+                                                    <div>
+                                                        <i class="bi bi-box-seam"></i>
+                                                        <span>Detalle de productos</span>
+                                                    </div>
+                                                    <small>Información de los productos facturados</small>
+                                                </div>
+                                                <div class="table-responsive">
+                                                    <table class="table invoice-table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>ITEM</th>
+                                                                <th>CÓDIGO</th>
+                                                                <th>DESCRIPCIÓN</th>
+                                                                <th>UNID.</th>
+                                                                <th>CANT.</th>
+                                                                <th>% IVA</th>
+                                                                <th>VR UNIT.</th>
+                                                                <th>IVA TOTAL</th>
+                                                                <th>TOTAL</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody id="detalleFactura"></tbody>
+                                                    </table>
+                                                </div>
+                                                <!--Observaciones / qr / totales-->
+                                                <div class="row g-3 mt-3">
+                                                    <!--Observaciones-->
+                                                    <div class="col-lg-5">
+                                                        <div class="invoice-observations">
+                                                            <div class="invoice-box-title">
+                                                                <i class="bi bi-chat-left-text"></i>
+                                                                Observaciones
+                                                            </div>
+                                                            <p id="f_observaciones">
+                                                                Gracias poñr su compra. Favor verificar la mercancia al momento de recibirla.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <!--QR-->
+                                                    <div class="col-lg-3">
+                                                        <div class="invoice-qr-card">
+                                                            <div class="invoice-box-title text-center">
+                                                                Código QR
+                                                            </div>
+                                                            <div class="qr_box">
+                                                                <i class="bi bi-qr-code"></i>
+                                                            </div>
+                                                            <small>Validación electrónica</small>
+                                                        </div>
+                                                    </div>
+                                                    <!--Totales-->
+                                                    <div class="col-lg-4">
+                                                        <div class="invoice-totals">
+                                                            <div class="invoice-total-row">
+                                                                <span>VALOR TOTAL BRUTO</span>
+                                                                <strong id="tbruto">$0</strong>
+                                                            </div>
+                                                            <div class="invoice-total-row">
+                                                                <span>DESCUENTO APLICADO</span>
+                                                                <strong id="desaplicado">$0</strong>
+                                                            </div>
+                                                            <div class="invoice-total-row">
+                                                                <span>SUBTOTAL</span>
+                                                                <strong id="subtotal">$0</strong>
+                                                            </div>
+                                                            <div class="invoicce-total-row">
+                                                                <span>IVA</span>
+                                                                <strong id="iva">$0</strong>
+                                                            </div>
+                                                            <div class="invoice-total-row">
+                                                                <span>FLETE</span>
+                                                                <strong id="flete">$0</strong>
+                                                            </div>
+                                                            <div class="invoice-total-row invoice-grand-total">
+                                                                <span>VALOR TOTAL</span>
+                                                                <strong id="vrtotal">$0</strong>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--Totales y valor en letras-->
+                                                <div class="invoice-bottom-summary">
+                                                    <div class="invoice-summary-samll">
+                                                        <span>TOTAL PIEZAS</span>
+                                                        <strong id="totalPiezas">7</strong>
+                                                    </div>
+                                                    <div class="invoice-summary-text">
+                                                        <span>VALOR EN LETRAS</span>
+                                                        <strong id="valorEnLetras">SON: UN MILLÓN QUINIENTOS CICUENTA Y SIETE MIL SETECIENTOS SETENTA Y CINCO PESOS M/CTE</strong>
+                                                    </div>
+                                                </div>
+                                                <!--CUFE-->
+                                                <div class="invoice-cufe">
+                                                    <div class="invoice-cufe-items">
+                                                        <span>TOTAL ITEMS</span>
+                                                        <strong id="totalItems">0</strong>
+                                                    </div>
+                                                    <div class="invoice-cufe-code">
+                                                        <span>
+                                                            <i class="bi bi-shield-check">CUFE</i>
+                                                        </span>
+                                                        <p id="cufeCodigo">3c2a5b464299864a6b442145d2b4130f
+                            80ca2e23d0ad7b0768b9e6ca9e0e8efed</p>
+                                                    </div>
+                                                </div>
+                                                <!--Información legal-->
+                                                <div class="row g-3 mt-3">
+                                                    <div class="col-lg-6">
+                                                        <div class="invoice-legal-box">
+                                                            <h6>Información comercial</h6>
+                                                            <p>EL FIRMANTE DEL PRESENTE TÍTULO VALOR SE ENCUENTRA DEBIDAMENTE FACULTADO PARA REPRESENTAR AL COMPRADOR. </p>
+                                                            <P>FAVOR CANCELAR LA PRESENTE FACTURA Y/O CONSIGNAR EN FORMATO DE RECAUDO EMPRESARIAL.</P>
+                                                            <P>EL ATRASO EN EL PAGO CAUSA INTERESES DE MORA A LA TASA MÁXIMA LEGAL AUTORIZADA.</P>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="invoice-legal-box">
+                                                            <h6>Información tributaria</h6>
+                                                            <p>SOMOS AGENTES RETENEDORES DE IVA.</p>
+                                                            <P>SOMOS AUTORRETENEDORES AUTORIZADOS SEGÚN RESOLUCIÓN No. 1024.</P>
+                                                            <p>NO EFECTUAR RETENCIÓN DE ICA. NUESTRA ACTIVIDAD SE DESARROLLA EN EL MUNICIPIO DE FLORIDABLANCA</p>
+                                                            <P>AUTORIZACIÓN DE NUMERACIÓN DE FACTURACIÓN SEGUN RESOLUCIÓN VIGENTE.</P>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--recibido-->
+                                                <div class="invoice-received-section">
+                                                    <div class="invoice-received-box">
+                                                        <span>Nombre y firma de quien recibe</span>
+                                                    </div>
+                                                    <div class="signature-line"></div>
+                                                    <div class="invoice-received-box">
+                                                        <span>Fecha de recepción</span>
+                                                        <div class="signature-line"></div>
+                                                    </div>
+                                                </div>
+                                                <!--pie factura-->
+                                                <div class="invoice-footer">
+                                                    <div>
+                                                        <i class="bi bi-shield-check"></i>
+                                                        Documento generado electrónicamente
+                                                    </div>
+                                                    <div>Supervidrios . Sistema de gestión</div>
+                                                </div>
+                                            </div>
+                                            <!--acciones inferiores-->
+                                            <div class="invoice-actions">
+                                                <button type="button" class="btn-invoice-secondary">
+                                                    <i class="bi bi-arrow-left">Volver a la venta</i>
+                                                </button>
+                                                <div class="invoice-actions-right">
+                                                    <button type="button" class="btn-invoice-email">
+                                                        <i class="bi bi-envelope"></i>
+                                                        Enviar por Email
+                                                    </button>
+                                                    <button type="button" class="btn-invoice-primary" onclick="imprimirFacyuta()">
+                                                        <i class="bi bi-printer">Imprimir factura</i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <div id="facturaImprimir"></div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn-btn-primary" onclick="imprimirFactura()">Imprimir</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>        
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="registroventas1.js"></script>
+<script>
+    function toggleMenu(menuId, button) {
+
+    const menu = document.getElementById(menuId);
+
+    // Cerrar todos los submenus
+    document.querySelectorAll('.step-submenu').forEach(item => {
+
+        if (item.id !== menuId) {
+            item.classList.remove('show');
+        }
+
+    });
+
+
+    // Quitar activo de todos los botones
+    document.querySelectorAll('.step').forEach(item => {
+        item.classList.remove('active');
+    });
+
+
+    // Abrir/cerrar el seleccionado
+    menu.classList.toggle('show');
+
+    // Activar botón
+    button.classList.add('active');
+}
+</script>    
+</body>
+</html>
