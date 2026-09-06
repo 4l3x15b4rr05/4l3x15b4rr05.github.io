@@ -1,0 +1,1518 @@
+/* =========================================================
+   SUPER VIDRIOS
+   LISTADO DE FACTURAS
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root {
+    --facturas-bg: #0b1220;
+    --facturas-bg-secondary: #111a2a;
+    --facturas-card: #172235;
+    --facturas-card-light: #202c40;
+
+    --facturas-border: rgba(148, 163, 184, 0.16);
+
+    --facturas-text: #f4f6fb;
+    --facturas-text-secondary: #aab6c8;
+    --facturas-text-muted: #77859a;
+
+    --facturas-purple: #8b5cf6;
+    --facturas-purple-light: #a78bfa;
+    --facturas-purple-dark: #5b32bd;
+
+    --facturas-green: #3bd38a;
+    --facturas-yellow: #f5b942;
+    --facturas-red: #f05b59;
+
+    --facturas-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    --facturas-radius: 18px;
+}
+
+
+/*=========================================================
+    BOTÓN NUEVO CLIENTE
+=========================================================*/
+
+/* CONTENEDOR DEL BOTÓN */
+
+.hero-actions{
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    margin-top: 20px;
+}
+
+
+/* BOTÓN NUEVO CLIENTE */
+
+.btn-nuevo-factura{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 13px 22px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(
+        135deg,
+        #8b5cf6,
+        #6d28d9
+    );
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 25px
+        rgba(139, 92, 246, 0.25);
+
+    transition: all .25s ease;
+}
+
+.btn-nuevo-factura:hover{
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 35px
+        rgba(139, 92, 246, 0.40);
+}
+
+
+
+/* =========================================================
+   CONTENEDOR PRINCIPAL
+   ========================================================= */
+
+.listado-facturas-page {
+    width: 100%;
+    margin-top: 30px;
+    padding: 0;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.listado-facturas-page .hero {
+    position: relative;
+    padding: 35px 35px 30px;
+    margin-bottom: 30px;
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(139, 92, 246, 0.16),
+            transparent 32%
+        ),
+        linear-gradient(
+            135deg,
+            rgba(23, 34, 53, 0.98),
+            rgba(17, 26, 42, 0.98)
+        );
+
+    border: 1px solid var(--facturas-border);
+    border-radius: var(--facturas-radius);
+
+    overflow: hidden;
+}
+
+
+/* Línea decorativa */
+
+.listado-facturas-page .hero::before {
+    content: "";
+    position: absolute;
+
+    width: 260px;
+    height: 260px;
+
+    right: -100px;
+    top: -130px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(139, 92, 246, 0.12);
+}
+
+
+/* Título */
+
+.listado-facturas-page .hero-title {
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: clamp(30px, 3vw, 45px);
+    font-weight: 600;
+
+    line-height: 1.15;
+
+    color: var(--facturas-text);
+}
+
+.listado-facturas-page .hero-title span {
+    color: var(--facturas-purple-light);
+}
+
+
+/* Texto */
+
+.listado-facturas-page .hero-text {
+    max-width: 720px;
+
+    margin: 15px 0 0;
+
+    color: var(--facturas-text-secondary);
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* Línea */
+
+.listado-facturas-page .hero-line {
+    width: 100%;
+    height: 1px;
+
+    margin-top: 28px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(139, 92, 246, 0.7),
+            rgba(139, 92, 246, 0.08),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   BOTÓN NUEVA FACTURA
+   ========================================================= */
+
+.listado-facturas-page .btn-nuevo-factura {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border-radius: 11px;
+
+    background: var(--facturas-purple);
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 25px rgba(139, 92, 246, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.listado-facturas-page .btn-nuevo-factura:hover {
+    color: #ffffff;
+
+    background: var(--facturas-purple-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 30px rgba(139, 92, 246, 0.32);
+}
+
+.listado-facturas-page .btn-nuevo-factura i {
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   RESUMEN DE FACTURAS
+   ========================================================= */
+
+.facturas-resumen {
+    margin-bottom: 30px;
+}
+
+
+/* Tarjeta */
+
+.facturas-resumen .factura-stat-card {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 125px;
+
+    padding: 22px;
+
+    background: var(--facturas-card);
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--facturas-shadow);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.facturas-resumen .factura-stat-card:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+}
+
+
+/* Icono */
+
+.facturas-resumen .factura-stat-icon {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 16px;
+
+    border-radius: 14px;
+
+    background:
+        rgba(139, 92, 246, 0.13);
+
+    color: var(--facturas-purple-light);
+
+    font-size: 21px;
+}
+
+.facturas-resumen .factura-stat-icon.success {
+    background: rgba(59, 211, 138, 0.12);
+    color: var(--facturas-green);
+}
+
+.facturas-resumen .factura-stat-icon.warning {
+    background: rgba(245, 185, 66, 0.12);
+    color: var(--facturas-yellow);
+}
+
+.facturas-resumen .factura-stat-icon.danger {
+    background: rgba(240, 91, 89, 0.12);
+    color: var(--facturas-red);
+}
+
+
+/* Información */
+
+.facturas-resumen .factura-stat-content {
+    min-width: 0;
+}
+
+.facturas-resumen .factura-stat-title {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--facturas-text-secondary);
+
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.facturas-resumen .factura-stat-content h3 {
+    margin: 0;
+
+    color: var(--facturas-text);
+
+    font-size: 27px;
+    font-weight: 600;
+
+    line-height: 1.2;
+}
+
+.facturas-resumen .factura-stat-content small {
+    display: block;
+
+    margin-top: 5px;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 10px;
+}
+
+.facturas-resumen .factura-stat-content small i {
+    margin-right: 3px;
+}
+
+.facturas-resumen .success-text {
+    color: var(--facturas-green) !important;
+}
+
+.facturas-resumen .warning-text {
+    color: var(--facturas-yellow) !important;
+}
+
+.facturas-resumen .danger-text {
+    color: var(--facturas-red) !important;
+}
+
+
+/* Botón tres puntos */
+
+.facturas-resumen .factura-more-btn {
+    position: absolute;
+
+    top: 13px;
+    right: 13px;
+
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--facturas-text-muted);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.facturas-resumen .factura-more-btn:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    color: var(--facturas-text);
+}
+
+
+/* =========================================================
+   TARJETA DEL LISTADO
+   ========================================================= */
+
+.listado-facturas-page .facturas-card {
+    width: 100%;
+
+    background: var(--facturas-card);
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: var(--facturas-radius);
+
+    box-shadow: var(--facturas-shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+.listado-facturas-page .facturas-card-header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    border-bottom: 1px solid var(--facturas-border);
+}
+
+.listado-facturas-page .facturas-card-header h4 {
+    margin: 0 0 5px;
+
+    color: var(--facturas-text);
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.listado-facturas-page .facturas-card-header p {
+    margin: 0;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 11px;
+}
+
+.listado-facturas-page .facturas-total {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+
+    background: rgba(139, 92, 246, 0.10);
+
+    color: var(--facturas-purple-light);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILTROS
+   ========================================================= */
+
+.listado-facturas-page .facturas-filtros {
+    padding: 20px 28px;
+
+    border-bottom: 1px solid var(--facturas-border);
+
+    background:
+        rgba(11, 18, 32, 0.18);
+}
+
+
+/* Buscador */
+
+.listado-facturas-page .facturas-search {
+    position: relative;
+
+    width: 100%;
+}
+
+.listado-facturas-page .facturas-search i {
+    position: absolute;
+
+    left: 15px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: var(--facturas-text-muted);
+
+    font-size: 14px;
+
+    pointer-events: none;
+}
+
+.listado-facturas-page .facturas-search input {
+    width: 100%;
+
+    height: 44px;
+
+    padding: 0 15px 0 43px;
+
+    background: var(--facturas-bg-secondary);
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: 10px;
+
+    outline: none;
+
+    color: var(--facturas-text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.listado-facturas-page .facturas-search input::placeholder {
+    color: var(--facturas-text-muted);
+}
+
+.listado-facturas-page .facturas-search input:focus {
+    border-color: var(--facturas-purple);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.10);
+}
+
+
+/* Select */
+
+.listado-facturas-page .facturas-filtros .form-select {
+    width: 100%;
+
+    height: 44px;
+
+    padding-left: 14px;
+
+    background-color: var(--facturas-bg-secondary);
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: 10px;
+
+    color: var(--facturas-text);
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 12px;
+
+    box-shadow: none;
+}
+
+.listado-facturas-page .facturas-filtros .form-select:focus {
+    border-color: var(--facturas-purple);
+
+    box-shadow:
+        0 0 0 3px rgba(139, 92, 246, 0.10);
+}
+
+.listado-facturas-page .facturas-filtros .form-select option {
+    background: var(--facturas-bg-secondary);
+
+    color: var(--facturas-text);
+}
+
+
+/* Botón filtro */
+
+.listado-facturas-page .btn-filtrar {
+    height: 44px;
+
+    border: 1px solid transparent;
+
+    border-radius: 10px;
+
+    background: var(--facturas-purple);
+
+    color: #ffffff;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.listado-facturas-page .btn-filtrar:hover {
+    background: var(--facturas-purple-dark);
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+.listado-facturas-page .btn-filtrar i {
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   TABLA
+   ========================================================= */
+
+.listado-facturas-page .table-responsive {
+    width: 100%;
+
+    overflow-x: auto;
+}
+
+
+/* Tabla */
+
+.listado-facturas-page .facturas-table {
+    width: 100%;
+
+    min-width: 950px;
+
+    margin: 0;
+
+    border-collapse: collapse;
+
+    color: var(--facturas-text);
+}
+
+
+/* Cabecera */
+
+.listado-facturas-page .facturas-table thead th {
+    padding: 16px 18px;
+
+    background:
+        rgba(11, 18, 32, 0.45);
+
+    border-bottom: 1px solid var(--facturas-border);
+
+    color: var(--facturas-text-muted);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+
+    white-space: nowrap;
+}
+
+
+/* Filas */
+
+.listado-facturas-page .facturas-table tbody tr {
+    background: transparent;
+
+    border-bottom: 1px solid var(--facturas-border);
+
+    transition:
+        background 0.2s ease;
+}
+
+.listado-facturas-page .facturas-table tbody tr:hover {
+    background:
+        rgba(139, 92, 246, 0.035);
+}
+
+.listado-facturas-page .facturas-table tbody tr:last-child {
+    border-bottom: 0;
+}
+
+
+/* Celdas */
+
+.listado-facturas-page .facturas-table tbody td {
+    padding: 17px 18px;
+
+    border: 0;
+
+    vertical-align: middle;
+
+    color: var(--facturas-text-secondary);
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   NÚMERO DE FACTURA
+   ========================================================= */
+
+.listado-facturas-page .factura-number {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+}
+
+.listado-facturas-page .factura-number-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 9px;
+
+    background:
+        rgba(139, 92, 246, 0.11);
+
+    color: var(--facturas-purple-light);
+
+    font-size: 15px;
+}
+
+.listado-facturas-page .factura-number strong {
+    display: block;
+
+    color: var(--facturas-text);
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.listado-facturas-page .factura-number small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   CLIENTE
+   ========================================================= */
+
+.listado-facturas-page .factura-client {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+.listado-facturas-page .client-avatar {
+    width: 35px;
+    height: 35px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--facturas-purple),
+            var(--facturas-purple-dark)
+        );
+
+    color: #ffffff;
+
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.listado-facturas-page .factura-client strong {
+    display: block;
+
+    color: var(--facturas-text);
+
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.listado-facturas-page .factura-client small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FECHA
+   ========================================================= */
+
+.listado-facturas-page .factura-date strong {
+    display: block;
+
+    color: var(--facturas-text-secondary);
+
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.listado-facturas-page .factura-date small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 9px;
+}
+
+
+/* =========================================================
+   FORMA DE PAGO
+   ========================================================= */
+
+.listado-facturas-page .payment-type {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: var(--facturas-text-secondary);
+
+    font-size: 10px;
+
+    white-space: nowrap;
+}
+
+.listado-facturas-page .payment-type i {
+    color: var(--facturas-purple-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+.listado-facturas-page .factura-total {
+    color: var(--facturas-text);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   ESTADOS
+   ========================================================= */
+
+.listado-facturas-page .factura-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 6px 9px;
+
+    border-radius: 7px;
+
+    font-size: 9px;
+    font-weight: 500;
+
+    white-space: nowrap;
+}
+
+
+/* Pagada */
+
+.listado-facturas-page .factura-status.paid {
+    background:
+        rgba(59, 211, 138, 0.10);
+
+    color: var(--facturas-green);
+}
+
+
+/* Pendiente */
+
+.listado-facturas-page .factura-status.pending {
+    background:
+        rgba(245, 185, 66, 0.10);
+
+    color: var(--facturas-yellow);
+}
+
+
+/* Anulada */
+
+.listado-facturas-page .factura-status.cancelled {
+    background:
+        rgba(240, 91, 89, 0.10);
+
+    color: var(--facturas-red);
+}
+
+
+/* =========================================================
+   ACCIONES
+   ========================================================= */
+
+.listado-facturas-page .factura-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+
+/* Botones */
+
+.listado-facturas-page .factura-actions button {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: var(--facturas-text-muted);
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.listado-facturas-page .factura-actions button:hover {
+    transform: translateY(-1px);
+}
+
+
+/* Ver */
+
+.listado-facturas-page .factura-actions .action-view:hover {
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    border-color:
+        rgba(139, 92, 246, 0.35);
+
+    color: var(--facturas-purple-light);
+}
+
+
+/* Descargar */
+
+.listado-facturas-page .factura-actions .action-download:hover {
+    background:
+        rgba(59, 211, 138, 0.10);
+
+    border-color:
+        rgba(59, 211, 138, 0.30);
+
+    color: var(--facturas-green);
+}
+
+
+/* Más opciones */
+
+.listado-facturas-page .factura-actions .action-more:hover {
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    color: var(--facturas-text);
+}
+
+
+/* =========================================================
+   PAGINACIÓN
+   ========================================================= */
+
+.listado-facturas-page .facturas-pagination {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 18px 28px;
+
+    border-top: 1px solid var(--facturas-border);
+
+    background:
+        rgba(11, 18, 32, 0.18);
+}
+
+
+/* Información */
+
+.listado-facturas-page .pagination-info {
+    color: var(--facturas-text-muted);
+
+    font-size: 10px;
+}
+
+
+/* Botones */
+
+.listado-facturas-page .pagination-buttons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+}
+
+.listado-facturas-page .page-btn {
+    min-width: 31px;
+    height: 31px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 8px;
+
+    border: 1px solid var(--facturas-border);
+
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: var(--facturas-text-muted);
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.listado-facturas-page .page-btn:hover {
+    background:
+        rgba(139, 92, 246, 0.10);
+
+    color: var(--facturas-purple-light);
+
+    border-color:
+        rgba(139, 92, 246, 0.25);
+}
+
+.listado-facturas-page .page-btn.active {
+    background: var(--facturas-purple);
+
+    border-color: var(--facturas-purple);
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   SCROLLBAR TABLA
+   ========================================================= */
+
+.listado-facturas-page .table-responsive::-webkit-scrollbar {
+    height: 6px;
+}
+
+.listado-facturas-page .table-responsive::-webkit-scrollbar-track {
+    background: var(--facturas-bg-secondary);
+}
+
+.listado-facturas-page .table-responsive::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.35);
+
+    border-radius: 10px;
+}
+
+.listado-facturas-page .table-responsive::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.55);
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+   ========================================================= */
+
+@media (max-width: 991.98px) {
+
+    .listado-facturas-page .hero {
+        padding: 30px 25px 25px;
+    }
+
+    .listado-facturas-page .hero-title {
+        font-size: 32px;
+    }
+
+    .listado-facturas-page .facturas-card-header {
+        padding: 22px;
+    }
+
+    .listado-facturas-page .facturas-filtros {
+        padding: 18px 22px;
+    }
+
+    .listado-facturas-page .facturas-pagination {
+        padding: 18px 22px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE - MÓVIL
+   ========================================================= */
+
+@media (max-width: 767.98px) {
+
+    .listado-facturas-page {
+        margin-top: 20px;
+    }
+
+
+    /* Hero */
+
+    .listado-facturas-page .hero {
+        padding: 25px 20px 22px;
+
+        border-radius: 15px;
+    }
+
+    .listado-facturas-page .hero-title {
+        font-size: 28px;
+    }
+
+    .listado-facturas-page .hero-text {
+        font-size: 12px;
+
+        line-height: 1.7;
+    }
+
+    .listado-facturas-page .hero .col-lg-4 {
+        text-align: left !important;
+
+        margin-top: 20px !important;
+    }
+
+    .listado-facturas-page .btn-nuevo-factura {
+        width: 100%;
+    }
+
+
+    /* Indicadores */
+
+    .facturas-resumen .factura-stat-card {
+        min-height: 110px;
+
+        padding: 18px;
+    }
+
+    .facturas-resumen .factura-stat-icon {
+        width: 45px;
+        height: 45px;
+
+        margin-right: 12px;
+    }
+
+    .facturas-resumen .factura-stat-content h3 {
+        font-size: 23px;
+    }
+
+
+    /* Encabezado */
+
+    .listado-facturas-page .facturas-card-header {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+
+    /* Filtros */
+
+    .listado-facturas-page .facturas-filtros {
+        padding: 18px 20px;
+    }
+
+
+    /* Tabla */
+
+    .listado-facturas-page .facturas-table {
+        min-width: 900px;
+    }
+
+
+    /* Paginación */
+
+    .listado-facturas-page .facturas-pagination {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 18px 20px;
+    }
+
+    .listado-facturas-page .pagination-buttons {
+        width: 100%;
+
+        justify-content: center;
+    }
+}
+
+
+/* =========================================================
+   MÓVILES PEQUEÑOS
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .listado-facturas-page .hero-title {
+        font-size: 25px;
+    }
+
+    .listado-facturas-page .hero-text {
+        font-size: 11px;
+    }
+
+    .facturas-resumen .factura-stat-title {
+        font-size: 11px;
+    }
+
+    .facturas-resumen .factura-stat-content h3 {
+        font-size: 21px;
+    }
+
+    .listado-facturas-page .facturas-card-header h4 {
+        font-size: 15px;
+    }
+}
+
+
+/*=========================================================
+    TABLA DE CLIENTES - TEMA OSCURO
+=========================================================*/
+
+.facturas-table{
+    width: 100%;
+
+    margin-bottom: 0;
+
+    --bs-table-bg: transparent;
+    --bs-table-color: #d8deea;
+    --bs-table-border-color: rgba(148, 163, 184, 0.12);
+
+    background: transparent;
+
+    color: #d8deea;
+}
+
+
+/* Encabezado */
+
+.facturas-table thead{
+
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+
+.facturas-table thead th{
+
+    padding: 18px 20px;
+
+    color: #9da9bc;
+
+    background: transparent;
+
+    border-bottom:
+        1px solid
+        rgba(148, 163, 184, 0.16);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    white-space: nowrap;
+}
+
+
+/* Filas */
+
+.facturass-table tbody tr{
+
+    background: transparent;
+
+    transition:
+        background .25s ease;
+}
+
+
+.facturas-table tbody td{
+
+    padding: 18px 20px;
+
+    color: #c7cfdb;
+
+    background: transparent;
+
+    border-color:
+        rgba(148, 163, 184, 0.10);
+
+    font-size: 14px;
+
+    vertical-align: middle;
+}
+
+
+/* Hover */
+
+.facturas-table tbody tr:hover{
+
+    background:
+        rgba(139, 92, 246, 0.06);
+}
+
+
+/* Evitar que Bootstrap coloque fondo blanco */
+
+.facturas-table > :not(caption) > * > *{
+
+    background-color: transparent;
+
+    box-shadow: none;
+}
+
+
+/*=========================================================
+    ESTADO DEL CLIENTE
+=========================================================*/
+
+.factura-status{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 72px;
+
+    padding: 6px 12px;
+
+    border-radius: 30px;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.factura-status.active{
+    border:
+        1px solid
+        rgba(59, 211, 138, 0.20);
+
+    background:
+        rgba(59, 211, 138, 0.10);
+
+    color: #3bd38a;
+}
+
+.factura-status.inactive{
+    border:
+        1px solid
+        rgba(240, 91, 89, 0.20);
+
+    background:
+        rgba(240, 91, 89, 0.10);
+
+    color: #f05b59;
+}
+
+
+/*=========================================================
+    ACCIONES
+=========================================================*/
+
+.factura-actions{
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+}
+
+.btn-factura-action{
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid
+        rgba(148, 163, 184, 0.15);
+
+    border-radius: 10px;
+
+    background:
+        rgba(255, 255, 255, 0.03);
+
+    color: #aab6c8;
+
+    font-size: 14px;
+
+    transition: all .20s ease;
+}
+
+.btn-factura-action:hover{
+    border-color:
+        rgba(139, 92, 246, 0.50);
+
+    background:
+        rgba(139, 92, 246, 0.12);
+
+    color: #a78bfa;
+
+    transform: translateY(-2px);
+}
+
+.btn-factura-action.danger:hover{
+    border-color:
+        rgba(240, 91, 89, 0.40);
+
+    background:
+        rgba(240, 91, 89, 0.10);
+
+    color: #f05b59;
+}
