@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListadoFacturas</title>
+
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <!--Bootstrap icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <!--Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+    <!--CSS-->
+    <link rel="stylesheet" href="registrocliente.css">
+    <link rel="stylesheet" href="registrocliente1.css">
+    <link rel="stylesheet" href="listadofacturas1.css">
+   
+    
+    
+    
+    
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <a href="#">
+                <img src="/supervidrios/logosimbol.svg" alt="Logo simbolo">
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <!--01-->
+            <div class="step-group">
+                <button class="step active" type="button" onclick="toggleMenu('menu01' , this)">
+                    <span>01</span>
+                </button>
+                <div class="step-submenu" id="menu01">
+                    <a href="">Dashboard</a>
+                    <a href="">Resumen de ventas</a>
+                    <a href="">Indicadores</a>
+                </div>
+            </div>
+            <!--02-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu02' , this)">
+                    <span>02</span>
+                </button>
+                <div class="step-submenu" id="menu02">
+                    <a href="">Clientes</a>
+                    <a href="">Registro de clientes</a>
+                    <a href="">Listado de clientes</a>
+                </div>
+            </div>
+            <!--03-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu03' , this)">
+                    <span>03</span>
+                </button>
+                <div class="step-submenu" id="menu03">
+                    <a href="">Ventas</a>
+                    <a href="">Nueva venta</a>
+                    <a href="">Cotizaciones</a>
+                    <a href="">Facturas</a>
+                </div>
+            </div>
+            <!--04-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu04' , this)">
+                    <span>04</span>
+                </button>
+                <div class="step-submenu" id="menu04">
+                    <a href="">Inventario</a>
+                    <a href="">Productos</a>
+                    <a href="">Entradas</a>
+                    <a href="">Salidas</a>
+                </div>
+            </div>
+            <!--05-->
+            <div class="step-group">
+                <button class="step" type="button" onclick="toggleMenu('menu05' , this)">
+                    <span>05</span>
+                </button>
+                <div class="step-submenu" id="menu05">
+                    <a href="">Configuración</a>
+                    <a href="">Usuarios</a>
+                    <a href="">Perfil</a>
+                </div>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+
+        <!--Header-->
+        <header class="header">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <!--Logo-->
+                    <div class="col-lg-3">
+                        <a href="#" class="logo-text">
+                            <img src="/supervidrios/logotext.svg" alt="Logo supervidrios" class="logo-svg">
+                        </a>
+                    </div>
+                     <!--Menu-->
+                    <div class="col-lg-6">
+                        <ul class="menu">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">History</a>
+                            </li>
+                            <li>
+                                <a href="#">Service</a>
+                            </li>
+                            <li>
+                                <a href="#">Contacts</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!--Icons-->
+                    <div class="col-lg-3">
+                        <div class="d-flex align-items-center nav-icons">
+                            <i class="bi bi-search"></i>
+                            <i class="bi bi-bell"></i>
+                            <i class="bi bi-chat"></i>
+                            <i class="bi bi-wifi text-success"></i>
+                            <img src="https://i.pravatar.cc/40" alt="foto de perfil" class="avatar mx-2">
+                            <button class="btn btn-today">Today</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Contenido-->
+        <div class="container-fluid">
+            <div class="main-container">
+                <div class="dashboard-panel">
+                    <section class="hero">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <h1 class="hero-title">Gestión de 
+                                    <span>Facturas</span>
+                                </h1>
+                                <p class="hero-text">
+                                   Consulta, organiza y administra las facturas registradas
+                                   en el sistema. Accede r+apidamente a la información de cada
+                                   documento, verifica su estado y realiza las acciones 
+                                   necesarias para su gestión.
+                                </p>
+                            </div>
+                            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+                                <a href="registroventas1.html" class="btn-nuevo-factura">
+                                    <i class="bi bi-receipt-cutoff"></i>
+                                    Nueva Factura
+                                </a>
+                            </div>
+                            <div class="col-12">
+                                <div class="hero-line"></div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                    <!--Resumen Facturas-->
+                    <section class="facturas-resumen">
+                        <div class="row g-4">
+
+                            <!-- Facturas emitidas -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="factura-stat-card">
+
+                                    <div class="factura-stat-icon">
+                                        <i class="bi bi-receipt"></i>
+                                    </div>
+
+                                    <div class="factura-stat-content">
+                                        <span class="factura-stat-title">
+                                            Facturas emitidas
+                                        </span>
+                                        <h3>125</h3>
+                                        <small>
+                                            <i class="bi bi-arrow-up"></i>
+                                            8.4% este mes
+                                        </small>
+                                    </div>
+
+                                    <button class="factura-more-btn">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Facturas pagadas -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="factura-stat-card">
+
+                                    <div class="factura-stat-icon success">
+                                        <i class="bi bi-check-circle"></i>
+                                    </div>
+
+                                    <div class="factura-stat-content">
+                                        <span class="factura-stat-title">
+                                            Facturas pagadas
+                                        </span>
+
+                                        <h3>108</h3>
+                                        <small class="success-text">
+                                            <i class="bi bi-check2"></i>
+                                            86.4% del total
+                                        </small>
+                                        
+                                    </div>
+
+                                    <button class="factura-more-btn">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+
+
+                            <!-- Facturas pendientes -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="factura-stat-card">
+
+                                    <div class="factura-stat-icon danger">
+                                        <i class="bi bi-clock-history"></i>
+                                    </div>
+
+                                    <div class="factura-stat-content">
+                                        <span class="factura-stat-title">
+                                            Facturas pendientes
+                                        </span>
+
+                                        <h3>12</h3>
+                                        <small class="danger-text">
+                                            <i class="bi bi-exclamation-circle"></i>
+                                            Requieren seguimiento
+                                        </small>
+                                    </div>
+
+                                    <button class="factura-more-btn">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <!-- Facturas anuladas -->
+                            <div class="col-lg-3 col-md-6">
+                                <div class="factura-stat-card">
+
+                                    <div class="factura-stat-icon warning">
+                                        <i class="bi bi-x-circle"></i>
+                                    </div>
+
+                                    <div class="factura-stat-content">
+                                        <span class="factura-stat-title">
+                                            Facturas anuladas
+                                        </span>
+
+                                        <h3>5</h3>
+                                        <small class="danger-text">
+                                            <i class="bi bi-dash-circle"></i>
+                                            4.0% del total
+                                        </small>
+                                    </div>
+
+                                    <button class="factura-more-btn">
+                                        <i class="bi bi-three-dots-vertical"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!--Panel principal-->
+                    <section class="listado-facturas-page">
+                        <div class="facturas-card">
+
+                            <!--Encabezado-->
+                            <div class="facturas-card-header">
+                                <div>
+                                    <h4>Facturas Registradas</h4>
+                                    <p>Información disponible en la base de datos.</p>
+                                </div>
+                                <span class="facturas-total">125 facturas</span>
+                            </div>
+
+                            <!--Buscador y filtros-->
+                            <div class="facturas-filtros">
+                                <div class="row g-3">
+                                    <!--Buscador-->
+                                    <div class="col-lg-5">
+                                        <div class="facturas-search">
+                                            <i class="bi bi-search"></i>
+                                            <input type="text" id="buscarFactura" placeholder="Buscar por factura, cliente o documento...">
+                                        </div>
+                                    </div>
+                                    <!--Tipo-->
+                                    <div class="col-lg-3">
+                                        <select name="" id="filtroEstado" class="form-select">
+                                            <option value="">Todos los estados</option>
+                                            <option value="pagada">Pagada</option>
+                                            <option value="pendiente">Pendiente</option>
+                                            <option value="anulada">Anulada</option>
+                                        </select>
+                                    </div>
+                                    <!--Estado-->
+                                    <div class="col-lg-2">
+                                        <select name="" id="filtroFecha" class="form-select">
+                                            <option value="">Todos las fechas</option>
+                                            <option value="hoy">Hoy</option>
+                                            <option value="semana">Esta semana</option>
+                                            <option value="mes">Este mes</option>
+                                            <option value="anio">Este año</option>
+                                        </select>
+                                    </div>
+                                    <!--Filtro-->
+                                    <div class="col-lg-2">
+                                        <button  type="button" class="btn btn-filtrar w-100">
+                                            <i class="bi bi-funnel-fill"></i>
+                                            Filtrar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Tabla-->
+                            <div class="table-responsive">
+                                <table class="table facturas-table align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th>Factura</th>
+                                            <th>Cliente</th>
+                                            <th>Fecha</th>
+                                            <th>Forma de pago</th>
+                                            <th>Total</th>
+                                            <th>Estado</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--Factura 2-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--factura 3-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--factura 4-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--factura 5-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--factura 6-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <!--factura 7-->
+                                        <tr>
+                                            <td>
+                                                <div class="factura-number">
+                                                    <div class="factura-number-icon">
+                                                        <i class="bi bi-file-earmark-text"></i>
+                                                    </div>
+                                                    <div>
+                                                        <strong>FV-00125</strong>
+                                                        <small>CUFE: 3c2a5b46...</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-client">
+                                                    <div class="client-avatar">JP</div>
+                                                    <div>
+                                                        <strong>Juan Pérez</strong>
+                                                        <small>CC 1.234.567.890</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="factura-date">
+                                                    <strong>01 Sep 2026</strong>
+                                                    <small>10:32 AM</small>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="payment-type">
+                                                    <i class="bi bi-bank"></i>
+                                                    Transferencia
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <strong class="factura-total">$916.300</strong>
+                                            </td>
+                                            <td>
+                                                <span class="factura-status paid">
+                                                    <i class="bi bi-check-circle-fill"></i>
+                                                    Pagada
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="factura-actions">
+                                                    <button type="button" title="Ver factura" class="action-view">
+                                                        <i class="bi bi-eye"></i>
+                                                    </button>
+                                                    <button type="button" id="descargar" class="action-download">
+                                                        <i class="bi bi-download"></i>
+                                                    </button>
+                                                    <button type="button" id="Mas opciones" class="action-more">
+                                                        <i class="bi bi-three-dots-vertical"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!--Paginación-->
+                            <div class="facturas-pagination">
+                                <div class="pagination-info">
+                                    Mostrando 1 - 5 de 125 facturas
+                                </div>
+                                <div class="pagination-buttons">
+                                    <button class="page-btn">
+                                        <i class="bi bi-chevron-left"></i>
+                                    </button>
+                                    <button class="page-btn active">1</button>
+                                    <button class="page-btn">2</button>
+                                    <button class="page-btn">3</button>
+                                    <button class="page-btn">...</button>
+                                    <button class="page-btn">172</button>
+                                    <button class="page-btn">
+                                        <i class="bi bi-chevron-right"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+<script>
+    function toggleMenu(menuId, button) {
+
+    const menu = document.getElementById(menuId);
+
+    // Cerrar todos los submenus
+    document.querySelectorAll('.step-submenu').forEach(item => {
+
+        if (item.id !== menuId) {
+            item.classList.remove('show');
+        }
+
+    });
+
+
+    // Quitar activo de todos los botones
+    document.querySelectorAll('.step').forEach(item => {
+        item.classList.remove('active');
+    });
+
+
+    // Abrir/cerrar el seleccionado
+    menu.classList.toggle('show');
+
+    // Activar botón
+    button.classList.add('active');
+}
+</script>    
+</body>
+</html>
