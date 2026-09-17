@@ -159,31 +159,4 @@ body{
     padding-left:15px;
 }
 
-/* ==========================
-   CONTENIDO
-========================== */
-
-.contenido{
-    margin-left:260px;
-    padding:40px;
-}
-
-/* ==========================
-   CARDS
-========================== */
-
-.card-dark{
-    background:white;
-
-    border-radius:30px;
-
-    border:none;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.08);
-
-    position:relative;
-
-    overflow:hidden;
-}
 
