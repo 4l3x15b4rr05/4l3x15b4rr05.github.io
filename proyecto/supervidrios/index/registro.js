@@ -34,6 +34,6 @@ function iniciarSesion() {
     }
     // Redirigir al Dashboard
 
-    window.location.href = "dashboard.html";
+    window.location.href = "../dashboard/dashboard.html";
     alert("Inicio de sesión exitoso. Bienvenido " + usuario);
 }
